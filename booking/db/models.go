@@ -21,3 +21,11 @@ type Booking struct {
 	Email     string
 	CreatedAt pgtype.Timestamp
 }
+
+type Reminder struct {
+	ID        int64
+	BookingID int64
+	Sent      bool
+	CreatedAt pgtype.Timestamp
+}
+

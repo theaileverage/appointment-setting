@@ -23,7 +23,7 @@ function classNames(...classes: (string | boolean)[]) {
 
 const MonthViewCalendar: FC<AdminReducerProps> = ({ state, dispatch }) => {
   const { data: scheduledEvents } = useQuery(scheduledEventsQuery());
-  const eventArray = scheduledEvents?.bookings.flatMap((b) => b.start) || [];
+  const eventArray = scheduledEvents?.bookings?.flatMap((b) => b.start) || [];
 
   const today = startOfToday();
   const [currMonth, setCurrMonth] = useState(() => format(today, "MMM-yyyy"));
